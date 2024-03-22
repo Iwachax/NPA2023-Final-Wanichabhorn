@@ -38,18 +38,12 @@ def create():
 
     if(resp.status_code >= 200 and resp.status_code <= 299):
         print("STATUS OK: {}".format(resp.status_code))
-        return "Interface Loopback " +stdid " is create successfully!"
     else:
-        print('Cannot create: Interface loopback' +stdid".format(resp.status_code))
+        print('Error. Status Code: {} \nError message: {}'.format(resp.status_code,resp.json()))
 
 
 def delete():
-    resp = requests.<!!!REPLACEME with the proper HTTP Method!!!>(
-        <!!!REPLACEME with URL!!!>, 
-        auth=basicauth, 
-        headers=<!!!REPLACEME with HTTP Header!!!>, 
-        verify=False
-        )
+    resp = requests.get(api_url, auth=basicauth, data=json.dumps(yangConfig),  headers=headers, verify=False)
 
     if(resp.status_code >= 200 and resp.status_code <= 299):
         print("STATUS OK: {}".format(resp.status_code))
@@ -61,13 +55,7 @@ def delete():
 def enable():
     yangConfig = <!!!REPLACEME with YANG data!!!>
 
-    resp = requests.<!!!REPLACEME with the proper HTTP Method!!!>(
-        <!!!REPLACEME with URL!!!>, 
-        data=json.dumps(<!!!REPLACEME with yangConfig!!!>), 
-        auth=basicauth, 
-        headers=<!!!REPLACEME with HTTP Header!!!>, 
-        verify=False
-        )
+    resp = requests.get(api_url, auth=basicauth, data=json.dumps(yangConfig),  headers=headers, verify=False)
 
     if(resp.status_code >= 200 and resp.status_code <= 299):
         print("STATUS OK: {}".format(resp.status_code))
@@ -79,13 +67,7 @@ def enable():
 def disable():
     yangConfig = <!!!REPLACEME with YANG data!!!>
 
-    resp = requests.<!!!REPLACEME with the proper HTTP Method!!!>(
-        <!!!REPLACEME with URL!!!>, 
-        data=json.dumps(<!!!REPLACEME with yangConfig!!!>), 
-        auth=basicauth, 
-        headers=<!!!REPLACEME with HTTP Header!!!>, 
-        verify=False
-        )
+    resp = requests.get(api_url, auth=basicauth, data=json.dumps(yangConfig),  headers=headers, verify=False)
 
     if(resp.status_code >= 200 and resp.status_code <= 299):
         print("STATUS OK: {}".format(resp.status_code))
@@ -97,12 +79,7 @@ def disable():
 def status():
     api_url_status = "<!!!REPLACEME with URL of RESTCONF Operational API!!!>"
 
-    resp = requests.<!!!REPLACEME with the proper HTTP Method!!!>(
-        <!!!REPLACEME with URL!!!>, 
-        auth=basicauth, 
-        headers=<!!!REPLACEME with HTTP Header!!!>, 
-        verify=False
-        )
+    resp = requests.get(api_url, auth=basicauth, data=json.dumps(yangConfig),  headers=headers, verify=False)
 
     if(resp.status_code >= 200 and resp.status_code <= 299):
         print("STATUS OK: {}".format(resp.status_code))

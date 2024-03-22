@@ -77,15 +77,15 @@ while True:
 # 5. Complete the logic for each command
 
         if command == "create":
-            print("Interface loopback " +message+ "is created successfully")     
+          restconf_final[]     
         elif command == "delete":
-            <!!!REPLACEME with code for delete command!!!>
+          restconf_final[] 
         elif command == "enable":
-            <!!!REPLACEME with code for enable command!!!>
+          restconf_final[] 
         elif command == "disable":
-            <!!!REPLACEME with code for disable command!!!>
+          restconf_final[]
         elif command == "status":
-            <!!!REPLACEME with code for status command!!!>
+          restconf_final[] 
         else:
             responseMessage = "Error: No command or unknown command"
         
